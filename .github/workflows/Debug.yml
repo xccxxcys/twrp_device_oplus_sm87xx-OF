@@ -140,8 +140,8 @@ jobs:
         run: |
           WORKINGDIR=$(pwd)
           if [ "${{ inputs.MANIFEST_BRANCH }}" = "14.1" ]; then
-            TWRP_REPO="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
-            TWRP_BRANCH="twrp-14.1"
+            TWRP_REPO="https://github.com/TWRP-Test/platform_manifest_twrp_aosp.git"
+            TWRP_BRANCH="twrp-16.0"
             repo init -u $TWRP_REPO -b $TWRP_BRANCH --depth=1
             repo sync 
             git clone https://gitlab.com/OrangeFox/sync.git -b master
