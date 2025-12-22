@@ -17,7 +17,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: '🌱 Device Tree Branch'
         required: true
-        default: 'main'
+        default: 'ofrp14.1'
       DEVICE_PATH:
         description: '📂 Specify your Device Path'
         required: true
