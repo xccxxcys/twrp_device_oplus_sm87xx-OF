@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!-- 
+	OrangeFox Splash by OrangeFox Team
+    Background logo idea by KMP design
+    适配13.2英寸平板（2800x2000 4:3分辨率），拉伸1080x1920原图填充全屏
+-->
+<recovery>
+	<details>
+		<resolution width="2800" h="2000"/> <!-- 平板目标分辨率 -->
+		<themeversion>3</themeversion>
+	</details>
+	
+	<resources>
+		<image name="splash_logo_w" filename="Splash/logo_w" retainaspect="1"/> <!-- Logo保持比例，避免变形 -->
+		<image name="splash_bg" filename="Splash/original" retainaspect="0"/> <!-- 关键：设为0，拉伸图片填充 -->
+		<font name="of" filename="EuclidFlex-Medium.ttf" size="80"/> <!-- 大屏适配：放大字体 -->
+		<font name="recovery" filename="EuclidFlex-Regular.ttf" size="68"/>
+	</resources>
+
+	<variables>
+		<variable name="of" value="%screen_h%-600"/> <!-- 调整文字纵向位置，避免贴底 -->
+		<variable name="rec" value="%screen_h%-500"/>
+		<variable name="screen_width" value="2800"/> <!-- 同步平板分辨率 -->
+		<variable name="screen_height" value="2000"/>
+		<variable name="header_color" value="#000000"/> <!-- 保留原有黑色背景 -->
+		<variable name="background_color" value="#000000"/>
+	</variables>
+
+	<pages>
+		<page name="splash">
+			<background color="%background_color%"/>
+
+			<fill color="%header_color%">
+				<placement x="0" y="0" w="%screen_width%" h="%screen_height%"/> <!-- 全屏填充背景 -->
+			</fill>
+
+			<image>
+				<image resource="splash_bg"/>
+				<placement x="0" y="0" w="%screen_width%" h="%screen_height%"/> <!-- 拉伸图片铺满整个屏幕 -->
+			</image>
+
+			<image>
+				<image resource="splash_logo_w"/>
+				<placement x="1400" y="%center_y%" placement="4"/> <!-- Logo水平居中（2800/2=1400） -->
+			</image>
+
+			<text style="menu_text">
+				<placement x="1400" y="%of%" placement="4"/> <!-- 文字水平居中 -->
+				<font resource="of" color="#ffffff"/>
+				<text>OrangeFox</text>
+			</text>
+
+			<text style="menu_text">
+				<placement x="1400" y="%rec%" placement="4"/>
+				<font resource="recovery" color="#ffffff"/>
+				<text>Recovery</text>
+			</text>
+		</page>
+	</pages>
+</recovery>

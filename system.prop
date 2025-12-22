@@ -3,3 +3,6 @@ ro.charger.enable_suspend=true
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
+
+#pad Dpi
+ro.sf.lcd_density=320

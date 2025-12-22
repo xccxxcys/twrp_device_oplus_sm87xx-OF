@@ -4,25 +4,25 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Configure base.mk
+# Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Configure core_64_bit_only.mk
+# Inherit from this product for devices that support only 64-bit apps using:
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
 # Configure virtual_ab compression.mk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_with_xor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
 
-# Configure emulated_storage.mk
+# Enable Project Quotas and Case Folding
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Configure twrp common.mk
+# Inherit some common twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Shipping API level
-BOARD_SHIPPING_API_LEVEL    := 35
-PRODUCT_SHIPPING_API_LEVEL  := 35
-PRODUCT_TARGET_VNDK_VERSION := 35
+BOARD_SHIPPING_API_LEVEL    := 34
+PRODUCT_SHIPPING_API_LEVEL  := 34
+PRODUCT_TARGET_VNDK_VERSION := 34
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
